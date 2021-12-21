@@ -7,9 +7,9 @@ for image in os.listdir(semester):
     path = os.path.join(semester, image)
     im = Image.open(path)
     print(path, im.size)
-    if max(im.size) <= 256:
+    if max(im.size) <= 150:
         continue
-    wratio = 256 / max(im.size)
+    wratio = 150 / max(im.size)
     im = im.convert('RGB')
     im = im.resize((int(wratio * im.size[0]), int(wratio * im.size[1])))
     im.save(path)
